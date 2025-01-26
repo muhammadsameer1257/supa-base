@@ -2,6 +2,17 @@ const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const SUPABASE_URL = "https://oybrwfkpboogbmoiwygs.supabase.co";
 const supa_base = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+document.addEventListener("DOMContentLoaded", async () => {
+  const { data, error } = await supa_base.auth.getSession();
+  console.log("data-DOmContetnLoad", data);
+  console.log("error-DOmContetnLoad", error);
+  if (data.session) {
+    // Redirect to dashboard if not already there
+    if (window.location.pathname !== "/dashboard.html") {
+      window.location.href = "dashboard.html";
+    }
+  } 
+
 
 
 async function handleLoginSubmit(event) {
@@ -31,6 +42,7 @@ async function handleLoginSubmit(event) {
   console.log("data", data);
   console.log("error-login", error);
 }
+    
 async function handleSignupSubmit(event){
 
     event.preventDefault();
