@@ -13,6 +13,23 @@ async function handleLoginSubmit(event) {
 
     console.log("username", email);
     console.log("password", password);
+
+    const { data, error } = await supa_base.auth.signInWithPassword({
+    email,
+    password,
+  });
+  if (error) {
+    loader.classList.add("hidden");
+
+    alert(error);
+  }
+  if (data?.session !== null) {
+    loader.classList.add("hidden");
+
+    window.location.href = "dashboard.html";
+  }
+  console.log("data", data);
+  console.log("error-login", error);
 }
 async function handleSignupSubmit(event){
 
