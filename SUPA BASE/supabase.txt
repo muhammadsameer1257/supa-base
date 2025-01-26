@@ -1,0 +1,30 @@
+Blog App
+
+Html :-
+Login
+Signup
+Dashboard
+ Btn - Logout
+ Logo - App logo
+ Btn - Create Blog
+Create Blog
+
+Js :-
+Js files
+
+Authentication:
+1- Signup - method
+2- Login - method
+3- Logout - method
+
+Protected Stack:
+Blog create:
+
+1- Upload Image on bucket
+   Hum apni image ko bucket ko dengy, Phr wo humen hosted url dega, Jo hosted url hoga wo hum DB me save karadengy.
+2- Create data on db
+ Input Fields:
+   Id:"abc",
+   Title:"My first blog",
+   Description:"My First descp",
+   Image:"https://www.abc.com",
